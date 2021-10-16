@@ -3,7 +3,7 @@ const thunk = require('redux-thunk').default
 const axios = require('axios');
 
 const createdtore = redux.createStore;
-const applyMiddleware = redux.applyMiddleware;
+const applyMiddleware = redux.applyMiddleware;// thunk allows action creator to have functions instead of objects and allows to perform async actions
 
 //Defining the initial state
 const initialState= {
@@ -77,6 +77,6 @@ const fetchUsers= ()=>{
     }
 }
 
-const store = createdtore(reducer,applyMiddleware(thunk));
+const store = createdtore(reducer,applyMiddleware(thunk));// thunk allows action creator to have functions instead of objects and allows to perform async actions
 store.subscribe(()=>{console.log(store.getState())});
 store.dispatch(fetchUsers());
